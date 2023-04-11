@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>card hover animation</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <style>
+    body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  background-color:#f2f2f2;
+  font-family: 'Lato', sans-serif;
+}
+
+.card-animation{
+  background-color:#FFF;
+  padding:20px 30px;
+  border-radius:16px;
+  color:#00A3A3;
+  position:relative;
+  z-index:11;
+  overflow:hidden;
+  transition:0.25s ease-in-out;
+  cursor:pointer;
+  min-height:120px;
+}
+
+.card-animation::before{
+  content:'';
+  position: absolute;
+  height:30px;
+  width:30px;
+  border-radius:50%;
+  background-color:#00A3A3;
+  top:-10px;
+  left:-10px;
+  z-index:-9;
+  transition:0.35s ease-in-out;
+}
+
+.card-animation:hover{
+  color:#FFF;
+}
+
+.card-animation:hover:before{
+  height:300px;
+  width:500px;
+  top:-20px;
+  left:-20px;
+  border-radius:5%;
+}
+  </style>
+  <body>
+  
+    <div class="card-animation">
+      <h1>Hello</h1>
+        <p>Hello this is an amazing card with nice animation</p>
+    </div>  
+    
+	<script src="index.js"></script>
+  </body>
+</html>
